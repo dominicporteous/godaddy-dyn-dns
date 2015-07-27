@@ -8,14 +8,14 @@ You will need the following already installed - unzip, python, python pip. Can b
 
 ```
 
-cd /tmp
-sudo wget https://github.com/dominicporteous/godaddy-dyn-dns/archive/master.zip
-sudo unzip master.zip -d godaddy-dyn-dns
+	cd /tmp
+	sudo wget https://github.com/dominicporteous/godaddy-dyn-dns/archive/master.zip
+	sudo unzip master.zip -d godaddy-dyn-dns
 
-sudo cd godaddy-dyn-dns/linux
+	sudo cd godaddy-dyn-dns/linux
 
-sudo chmod 755 autosetup.sh
-sudo ./autosetup.sh 
+	sudo chmod 755 autosetup.sh
+	sudo ./autosetup.sh 
 
 ```
 
@@ -31,10 +31,12 @@ Next, go to Start > Run > cmd.exe (make sure you are an Administrator on the PC 
 
 ```
 
-cd Documents\godaddy-dyn-dns
-autosetup.bat
+	cd Documents\godaddy-dyn-dns
 
-```
+```	
+Depending on the architecture of your windows PC, run either the 32 or 64 version of the autosetup batch file.
+	`win\autosetup-32.bat` OR `win\autosetup-64.bat`
+
 
 This will set up the windows service, allowing the script to run until you tell it to stop. 
 The service will also start automatically on startup, with a delayed start.

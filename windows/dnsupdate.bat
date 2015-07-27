@@ -1,1 +1,1 @@
-py godaddy.py
+py %1 > out.log 2>&1

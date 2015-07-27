@@ -1,6 +1,10 @@
 # godaddy-dyn-dns
 Simple set up of Dynamic DNS record updating - allow access to your home computer from the internet, even with a dynamic IP
 
+## Credits
+Big thanks to the guys who put together `pygodaddy` - https://github.com/observerss/pygodaddy
+Docs can be found here: https://pygodaddy.readthedocs.org/
+
 # Quick Start
 
 ## Linux
@@ -40,3 +44,37 @@ Depending on the architecture of your windows PC, run either the 32 or 64 versio
 
 This will set up the windows service, allowing the script to run until you tell it to stop. 
 The service will also start automatically on startup, with a delayed start.
+
+
+# Advanced Usage
+
+You can also update more than one DNS record at a time, using any variable you choose if you edit the `godaddy.py` file.
+
+```
+
+	from pygodaddy import GoDaddyClient
+	import requests
+	import time 
+
+	while True:
+		client = GoDaddyClient()
+
+		ip = requests.get('http://canihazip.com/s').text
+		secip = ip = requests.get('http://yourwebservice/api/ip').text
+
+		with open( 'last_ip.dat', 'w+' ) as last_ip:
+			if( last_ip != ip ):
+				f = open( 'last_ip.dat', 'w' )
+				f.write( ip )
+				f.close()
+
+				username='godaddy-username'
+				password='godaddy-password'
+
+				if client.login( username, password ):
+					client.update_dns_record( 'your.dns.record', ip )
+					client.update_dns_record( 'another.dns.record', sec_ip )
+		
+		time.sleep(300)
+
+```

@@ -5,6 +5,13 @@ Simple set up of Dynamic DNS record updating - allow access to your home compute
 Big thanks to the guys who put together `pygodaddy` - https://github.com/observerss/pygodaddy
 Docs can be found here: https://pygodaddy.readthedocs.org/
 
+## Next Steps...
+Please note, after installing, you will need to set up the appropriate port forwarding rules for your home router if you are trying to make SSH/RDP available from the internet.
+
+See here:
+Windows: http://windows.microsoft.com/en-GB/windows7/allow-remote-desktop-connections-from-outside-your-home-network
+Linux (Raspian):   https://www.raspberrypi.org/forums/viewtopic.php?f=36&t=20826
+
 # Quick Start
 
 ## Linux

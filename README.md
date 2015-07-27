@@ -1,5 +1,5 @@
 # godaddy-dyn-dns
-Simple set up of Dynamic DNS record updating - allow access to your home computer from the internet, even with a dynamic IP
+Simple set up of Dynamic DNS record updating for GoDaddy - allow access to your home computer from the internet, even with a dynamic IP
 
 ## Credits
 Big thanks to the guys who put together `pygodaddy` - https://github.com/observerss/pygodaddy

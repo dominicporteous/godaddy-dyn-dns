@@ -11,6 +11,9 @@ SET dir=%%F
 "%dir%\windows\nssm-64.exe" set "GoDaddy Dynamic DNS" AppDirectory "%dir%\bin"
 "%dir%\windows\nssm-64.exe" set "GoDaddy Dynamic DNS" Start SERVICE_DELAYED_AUTO_START
 
+pip install requests
+pip install tldextract
+
 "%dir%\windows\nssm-64.exe" start "GoDaddy Dynamic DNS"
 
 echo Setup Done... 
